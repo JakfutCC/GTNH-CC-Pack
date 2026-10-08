@@ -1,13 +1,15 @@
 {
   "title": "GTNH CubicChunks patch bundle",
-  "target": "GT New Horizons 2.9.0-beta-3, Java 17-26",
+  "target": "GT New Horizons 2.9.0-RC-2, Java 17-26",
   "marker": "jakfutcc",
   "cubicchunks_base": "v0.1.25-alpha-pre",
   "notes": [
+    "Install on the normal RC2 base pack. This ZIP does not update beta3 configs, quests or launcher libraries.",
     "Contains every completed compatibility patch in the maintained inventory, including partial compatibility fixes.",
     "Prior per-patch builds, reviews and harness checks have different scopes; this is not a claim of complete compatibility for every feature.",
     "Storage writes default to Zstandard and new worlds use compact empty-cube storage. Older unpatched CC cannot read all of these records.",
-    "The world-converter UI is not included."
+    "The world-converter UI is not included.",
+    "RC2 carries 88 mod version updates from beta3; 38 patch jars were rebuilt. Angelica remains the newer patched 2.2.29; Hydro already matches 1.4.25. Historical compatibility notes below retain their original evidence scope."
   ],
   "patches": [
     {
@@ -86,13 +88,13 @@
       "mod_ids": [
         "appliedenergistics2"
       ],
-      "artifact": "corpus/build-artifacts/ae2/cc-deployment/appliedenergistics2-rv3-beta-1050-jakfutcc.jar",
-      "sha256": "9e34656aee22a7ca5a7df023c2d7955da3e518058eaf131ada6711aa26ef4c5c",
+      "artifact": "corpus/build-artifacts/rc2/Applied-Energistics-2-Unofficial/appliedenergistics2-rv3-beta-1080-GTNH-jakfutcc.jar",
+      "sha256": "7d5fd90df43fb502d9a4cec52d700cae1348f193a64f706b1bfd814ba21f5e6a",
       "patterns": [
         "appliedenergistics2-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/Applied-Energistics-2-Unofficial",
-      "source_commit": "3abf901a663aecb80cd8b9c5c08f9aab5a785098",
+      "source_commit": "ec7c30db5b566781c36069bc8aa65bbfac401f0c",
       "scopes": [
         "Applied Energistics 2"
       ],
@@ -103,7 +105,9 @@
           "notes": "Player's2026-09-28 spatial-load-r1 transfer worked but lagged with gradual client updates; server movement is synchronous. Local CC bulk candidate65f5b1a already implements threshold cube resend plus all-air/neighbor light preservation, with prior Opus review. 2026-10-05 source recheck and baseline/patched routing plus48 codec/8-height face fixtures pass again; not new live spatial/Phosphor/client evidence. AE2 still marks every block; full save/restore with complex machines/entities and remaining lighting/render costs need testing. Existing uncommitted provideChunk preflight preserved; earlier9aa922ff7 API adapter and0e917640b controller fixes retained. See ae2-spatial-activation-20260928.md and [reconciliation](tf-particle-faces-20261005.md). Compass lifecycle/cache repair separate; no new source push or deployment."
         }
       ],
-      "filename": "appliedenergistics2-rv3-beta-1050-jakfutcc-9e34656a.jar"
+      "filename": "appliedenergistics2-rv3-beta-1080-GTNH-jakfutcc-7d5fd90d.jar",
+      "rc2_base": "rv3-beta-1080-GTNH",
+      "rc2_upstream_commit": "e69c59ccd7933fd9e3de899e34a70a1f30414002"
     },
     {
       "name": "ArchaicFix",
@@ -132,13 +136,13 @@
       "mod_ids": [
         "architecturecraft"
       ],
-      "artifact": "corpus/build-artifacts/architecturecraft/cc-height-compat/ArchitectureCraft-1.12.17-cc-placement-b1df66d.jar",
-      "sha256": "b953426fc40bea79c02fabc4647c96f8ec6aa4aaf34c48c123d7a091a0e0873a",
+      "artifact": "corpus/build-artifacts/rc2/ArchitectureCraft/ArchitectureCraft-1.12.18-jakfutcc.jar",
+      "sha256": "a83b5fbf4f79bd5cf8432e70e5d565e8839681a085c61864d15c1ea642796bed",
       "patterns": [
         "architecturecraft-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/ArchitectureCraft",
-      "source_commit": "b1df66db53fe30bf82762696c040b08b11157acf",
+      "source_commit": "a965fa2970ac306ad9d7e2267a0e5f2112cdcb03",
       "scopes": [
         "ArchitectureCraft"
       ],
@@ -148,7 +152,10 @@
           "status": "Passing",
           "notes": "1.12.17 b1df66d on JakfutCC/fix-cubic-placement-height replaces copied Y255 rejection with CC placement ceiling. Build passes. 2026-09-20 runtime: normal server item use places sawbench at Y255 where stock refuses; Y-32/64/320 controls also succeed, with screenshots. Other reviewed coordinate/TE paths use full ints and standard APIs."
         }
-      ]
+      ],
+      "filename": "ArchitectureCraft-1.12.18-jakfutcc-a83b5fbf.jar",
+      "rc2_base": "1.12.18",
+      "rc2_upstream_commit": "6779356d0ff61096e75d9d70326f0e6433c5f55e"
     },
     {
       "name": "AsieLib",
@@ -207,8 +214,8 @@
         "buildcraft|silicon",
         "buildcraft|transport"
       ],
-      "artifact": "corpus/build-artifacts/buildcraft/height-integration/buildcraft-7.1.63-cc-height-compat-d0002a8.jar",
-      "sha256": "54e774f30a539332866ec478aa15d8ab5280199b25dfc087aadaab642618f061",
+      "artifact": "corpus/build-artifacts/rc2/BuildCraft/buildcraft-7.1.64-jakfutcc.jar",
+      "sha256": "9031f030e746fd6452ddb72a6dfaf466bb1a990b1678fbf468e5012a3844f600",
       "patterns": [
         "buildcraft-0*.jar",
         "buildcraft-1*.jar",
@@ -222,7 +229,7 @@
         "buildcraft-9*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/BuildCraft",
-      "source_commit": "d0002a844ccb17ff7dd6b3b325c2680d6dcc0b69",
+      "source_commit": "1390c2202ffc236b304ab604c76f9e8776c03930",
       "scopes": [
         "BC Builders",
         "BuildCraft Mining Well",
@@ -234,7 +241,10 @@
           "status": "Partial",
           "notes": "Locald0002a8 integrates corrected cube cache, Mining Well and quarry decoder into one candidate. Build/Opus,7187 cache/131072 codec cases and six real-server comparisons pass219 checks/525 callbacks:24 mining/cleanup and9 stale-cache corrections retained together, ordinary identical. [Integration evidence](buildcraft-height-integration-20261006.md). Previously client-tested quarry bytecode unchanged; injected-target evidence is not underground mining. Quarry/pump/Architect policies, worker lookups and metadata/client cache lifecycle remain. No whole-Builder gameplay/performance claim, new public tests, push or deployment."
         }
-      ]
+      ],
+      "filename": "buildcraft-7.1.64-jakfutcc-9031f030.jar",
+      "rc2_base": "7.1.64",
+      "rc2_upstream_commit": "875e86b5e6e41aa75a13b0680dfc5f74cb8a49af"
     },
     {
       "name": "BetterBuildersWands",
@@ -264,13 +274,13 @@
       "mod_ids": [
         "awwayoftime"
       ],
-      "artifact": "corpus/build-artifacts/bloodmagic/teleport/BloodMagic-1.9.13-cc-teleport-7f9b068.jar",
-      "sha256": "24122cbc036ab06f0490115dbe65275982e4c97bdf10c8b05965cb937e0d7fe3",
+      "artifact": "corpus/build-artifacts/rc2/BloodMagic/BloodMagic-1.9.14-jakfutcc.jar",
+      "sha256": "793a0b2813a6d23d861f4d9917c66f74d2d012c4fb375d110ef521c39447f062",
       "patterns": [
         "bloodmagic-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/BloodMagic",
-      "source_commit": "7f9b068b72a81a00583b65667ef10a74024f6838",
+      "source_commit": "9d677bbd77895828a9efdcdaad35fb16e1fb446e",
       "scopes": [
         "Blood Magic: Alchemical Wizardry"
       ],
@@ -280,20 +290,23 @@
           "status": "Passing",
           "notes": "Local1.9.13/7f9b068 on ritual patch27f2057 adds bounded loaded-cube landings for spell/Assassin Sigil before moving entities, with shape-neighbour guards and server particles. Build/style and284 final-jar server assertions pass;98 baseline failing outcomes, identical physically non-CC controls. Inactive unregistered AlphaPact excluded; no connected-client/particle or powered LP-network gameplay claim. No public tests, push or deployment. [Evidence](bloodmagic-teleport-20261004.md)."
         }
-      ]
+      ],
+      "filename": "BloodMagic-1.9.14-jakfutcc-793a0b28.jar",
+      "rc2_base": "1.9.14",
+      "rc2_upstream_commit": "10a36f6413b8a7ce6ebf16ca8b04614ff15566cd"
     },
     {
       "name": "Botania",
       "mod_ids": [
         "botania"
       ],
-      "artifact": "corpus/build-artifacts/botania/cubic-items/Botania-1.13.34-cubic-items-81870c6.jar",
-      "sha256": "d38d4f2daa5790a20b99477a35a56515bf3bb5bc3401eacca33e37a50435d8b2",
+      "artifact": "corpus/build-artifacts/rc2/Botania/Botania-1.13.37-GTNH-jakfutcc.jar",
+      "sha256": "9020f62d8b8a687096af7f09e535d675355dc409f581a408a3220e0173a9cd43",
       "patterns": [
         "botania-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/Botania",
-      "source_commit": "81870c6bb3b83670bbe92e82bddd5ce37027c926",
+      "source_commit": "fd796e38dc9938b842b0c902b6c5ebd2fde16f92",
       "scopes": [
         "Botania"
       ],
@@ -303,7 +316,10 @@
           "status": "Partial",
           "notes": "1.13.34-GTNH/81870c6 includes signed binding/source presence, placement and loaded-target/render guards. Mana Mirror guard regresses remote use when pool cube unloads: reports zero available mana; pool/backlog retained. Source-confirmed, item-specific loading policy unresolved, no gameplay reproduction. Already-linked flowers can still load target cubes. Rainbow Rod finite cap/flooring intentionally also change no-CC behavior. Prior build/eight tests/141 binding/117 effect fixtures miss these lifecycle cases; no live wire/GL test. Old flagless Y=-1 bindings need rebinding; external burst implementations need explicit presence support."
         }
-      ]
+      ],
+      "filename": "Botania-1.13.37-GTNH-jakfutcc-9020f62d.jar",
+      "rc2_base": "1.13.37-GTNH",
+      "rc2_upstream_commit": "cefdfd7ca6d8d6eaa37999a5168efe10cc947929"
     },
     {
       "name": "botanichorizons",
@@ -358,13 +374,13 @@
       "mod_ids": [
         "codechickencore"
       ],
-      "artifact": "corpus/build-artifacts/codechickencore/cube-load/CodeChickenCore-1.4.19-cc-cube-load-1f7a43d.jar",
-      "sha256": "7ade0c5b0c0c9a6903ae57269b141537d3254be541f319737653fc7dd29e1647",
+      "artifact": "corpus/build-artifacts/rc2/CodeChickenCore/CodeChickenCore-1.4.22-jakfutcc.jar",
+      "sha256": "fe42b87ce1f2e8f4b99a53766f51209f5c1e1d893f0e3adbbc3839c08e0d2883",
       "patterns": [
         "codechickencore-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/CodeChickenCore",
-      "source_commit": "1f7a43dd07017373cd72171aa6c9ec8e9b8cdff9",
+      "source_commit": "caf74f66a57dd21af23d7fc43e1f16c965fefc54",
       "scopes": [
         "CodeChicken Core"
       ],
@@ -374,7 +390,10 @@
           "status": "Passing",
           "notes": "Local 1f7a43d adds optional cube-scoped IChunkLoadTile callbacks; existing 2072b60 column lookup retained. Actual saved tiles at Y-32/64/512 receive 0 callbacks baseline, exactly 1 patched; ordinary server reload also passes. FMP e05c25d now supplies companion scheduler restoration/unload handling, tested with actual saved parts. Both CCC deltas have separate Opus reviews; duplicate tracker row corrected after verifying the earlier report. No player deployment/source push; client callbacks and real wireless networks untested. [Evidence](ccc-cube-load-20261004.md)."
         }
-      ]
+      ],
+      "filename": "CodeChickenCore-1.4.22-jakfutcc-fe42b87c.jar",
+      "rc2_base": "1.4.22",
+      "rc2_upstream_commit": "a9643dba1cfa0ab8f19c299096f79e377d672d7d"
     },
     {
       "name": "Computronics",
@@ -405,13 +424,13 @@
         "creativecore",
         "littletiles"
       ],
-      "artifact": "corpus/build-artifacts/littletiles/cc-structure-loading/littletiles-1.6.44-cc-structure-loading-9ce6e92.jar",
-      "sha256": "61e03b1885428ab9c3f05bfa8a66255650ab12a108ad894c1a479a7d52d2bc29",
+      "artifact": "corpus/build-artifacts/rc2/LittleTiles/littletiles-1.6.59-jakfutcc.jar",
+      "sha256": "0f707bc5ec805fcd90eae220cb5de143ca632de3f0256b9f8942f88b0e0cc2d2",
       "patterns": [
         "littletiles-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/LittleTiles",
-      "source_commit": "9ce6e9230e73a196f42a276c1c36368388cbeb89",
+      "source_commit": "b5c289fd4265a31f8765dd86bb9014663fa0720b",
       "scopes": [
         "CreativeCore"
       ],
@@ -421,20 +440,23 @@
           "status": "Partial",
           "notes": "Bundled in LittleTiles 1.6.44. New org branch fix-cubic-structure-loading at 9ce6e92 includes placement fix ecb288f plus exact loaded-cube guards, server-only orphan removal while client tile descriptions arrive, and retries for partially loaded structure members. Build and 220 extracted-method fixture checks pass; old client deletion and cached partial-list failures reproduced in fixtures, not gameplay. Destruction with unloaded members and already-resolved stale structure links remain deferred. Simple placement was user-tested earlier; no new structured-item/cross-cube lifecycle game test or deployment."
         }
-      ]
+      ],
+      "filename": "littletiles-1.6.59-jakfutcc-0f707bc5.jar",
+      "rc2_base": "1.6.59",
+      "rc2_upstream_commit": "fe177d895d17f2d94583278bde76a91d804fd128"
     },
     {
       "name": "Crops NH",
       "mod_ids": [
         "cropsnh"
       ],
-      "artifact": "corpus/build-artifacts/cropsnh/cc-subsoil/cropsnh-2.0.114-cc-subsoil-a3c97ed.jar",
-      "sha256": "9f0cf6d151762f3766581b856c053097ea50591f53bdcd34d30602b4f15c0fcd",
+      "artifact": "corpus/build-artifacts/rc2/CropsNH/cropsnh-2.0.134-jakfutcc.jar",
+      "sha256": "091018a1adcf5a543be61f51f79cc345e1956c501d8d5f87a3e02f3ab60e0bc1",
       "patterns": [
         "cropsnh-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/CropsNH",
-      "source_commit": "a3c97edd79157c4197d154a346edddffaec8c88f",
+      "source_commit": "a105c44b416c72ef3b8fed68234357e250420b25",
       "scopes": [
         "Crops NH"
       ],
@@ -444,7 +466,10 @@
           "status": "Passing",
           "notes": "2.0.114 a3c97ed on JakfutCC/CropsNH:fix-cubic-subsoil. Build/checkstyle pass. 2026-09-20 actual SubSoilRequirement.getSubSoil in a running CC world finds the iron subsoil at Y-32 with patch, returns null in stock; Y64/255/320 controls find it. Tests the changed lookup, not a complete crop growth cycle or third-party machine behavior. Other audited paths use integer/relative World APIs."
         }
-      ]
+      ],
+      "filename": "cropsnh-2.0.134-jakfutcc-091018a1.jar",
+      "rc2_base": "2.0.134",
+      "rc2_upstream_commit": "1d2936f53192b2648a853ab529df758fd40a4f20"
     },
     {
       "name": "CubicChunks",
@@ -521,13 +546,13 @@
       "mod_ids": [
         "enderio"
       ],
-      "artifact": "corpus/build-artifacts/enderio/cc-farm/EnderIO-2.10.44-cc-farm-3444f00.jar",
-      "sha256": "899419143185531b6fb191fed72b892f12b3867a5652726a4f6312d57850339f",
+      "artifact": "corpus/build-artifacts/rc2/EnderIO/EnderIO-2.10.48-jakfutcc.jar",
+      "sha256": "7087a44cee8bfc0c81517a7fe2df16ef706407e32277186fc19343aed6da5b8b",
       "patterns": [
         "enderio-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/EnderIO",
-      "source_commit": "3444f008d019dc304654a1b6c495dfebe975e056",
+      "source_commit": "967a37fbdbcf43983758a3a7b0257dd540029fc3",
       "scopes": [
         "Ender IO"
       ],
@@ -537,7 +562,10 @@
           "status": "Partial",
           "notes": "Local71e7509 soil preflight plus3444f00 upper stem guard reviewed/built. Real doTick at CC Y-32/64/512 and absent-CC64 prevents six unwanted soil/upper cube loads; retries, wheat tilling, seeds/RF/hoe use verified, ordinary controls unchanged. Longer stem/tree/Natura/cocoa and external growth footprints plus renderer/loading policy deferred. Existing signed placement/light/remote patches retained. See farm-bee-followups-20261005.md; no player gameplay, push or deployment."
         }
-      ]
+      ],
+      "filename": "EnderIO-2.10.48-jakfutcc-7087a44c.jar",
+      "rc2_base": "2.10.48",
+      "rc2_upstream_commit": "8dcda4e82287f626bdbe4c8347666ca2ac669f02"
     },
     {
       "name": "Ender Zoo",
@@ -590,13 +618,13 @@
       "mod_ids": [
         "etfuturum"
       ],
-      "artifact": "corpus/build-artifacts/etfuturum/bee-neighbors/etfuturum-2.6.58-GTNH-cc-bee-neighbors-d690454b.jar",
-      "sha256": "3d918fa79e271f7abc8e1d16ed39a9051d913a3e7261ee6064f5f9f93b14abd0",
+      "artifact": "corpus/build-artifacts/rc2/Et-Futurum-Requiem/etfuturum-2.6.60-GTNH-jakfutcc.jar",
+      "sha256": "0b623bc95676f3e56f7d17d5028b1d633bc1e7cfda33aed094ab0dc2df715698",
       "patterns": [
         "etfuturum-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/Et-Futurum-Requiem",
-      "source_commit": "d690454ba409c75054c14ce1ce5497d55e7cfb2c",
+      "source_commit": "ae86917936f11efa49a9d4af1070969dd3643539",
       "scopes": [
         "Et Futurum Bee Neighbor Coordinates",
         "Et Futurum Boat And Particle Coordinates",
@@ -608,20 +636,23 @@
           "status": "Partial",
           "notes": "Local d690454b fixes bee below-node weights at Y0/below and floors pollination XYZ. Build, Opus review and2080 actual-server assertions pass:9 path/34 crop outcomes corrected. [Bee evidence](efr-bee-neighbors-20261006.md). Direct callbacks, not natural navigation/client proof. Prior [shulker](efr-shulker-positions-20261006.md), [boats/particles](efr-boat-particles-20261005.md), [bee movement](farm-bee-followups-20261005.md), bamboo/dripstone retained. Beacon/gateway/hive/biome/raw-section decoration remain deferred; moss/azalea is disabled in target configs, so its retry/bounds lead is [deprioritized](galacticraft-enclosed-cable-20261006.md). No public tests, push or deployment."
         }
-      ]
+      ],
+      "filename": "etfuturum-2.6.60-GTNH-jakfutcc-0b623bc9.jar",
+      "rc2_base": "2.6.60-GTNH",
+      "rc2_upstream_commit": "581794cccc4abb679b74ee21fc5b0201af7f3e6b"
     },
     {
       "name": "Fether",
       "mod_ids": [
         "fether"
       ],
-      "artifact": "corpus/build-artifacts/fether/cc-plants/fether-2.0.5-cc-plants-ccebb81.jar",
-      "sha256": "28f3d4be4c07c6c0a3512bfef0b27b767b4b3d730a26e8e62986705690e88260",
+      "artifact": "corpus/build-artifacts/rc2/Fether/fether-2.0.7-jakfutcc.jar",
+      "sha256": "52efa447f1eecd3931ff11d41e9aa81bd16138b288d5cccb56fecc89949b6343",
       "patterns": [
         "fether-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/Fether",
-      "source_commit": "ccebb817a2d8c33a249660432f3000d5437ee958",
+      "source_commit": "c97348ef4431cec1e05ab8d4424dd839bec2daa0",
       "scopes": [
         "Fether"
       ],
@@ -631,20 +662,23 @@
           "status": "Passing",
           "notes": "2.0.5/ccebb817: second-pass tree/flower caller review approved soil/clearance bounds and physical CC API despite fake legacy height 256. Build and translated/boundary/flower/no-CC fixtures rerun pass. Prior combined-candidate direct tree generation produced 73 blocks at Y-32/64/255/320; stock only at Y64. Live flowers/sapling callbacks remain untested; natural Nether population still samples 0..127. No code change/push/deployment or new gameplay test."
         }
-      ]
+      ],
+      "filename": "fether-2.0.7-jakfutcc-52efa447.jar",
+      "rc2_base": "2.0.7",
+      "rc2_upstream_commit": "b114b421aa3165ba6b5b4f44909a5bd3d7ca8795"
     },
     {
       "name": "FindIt",
       "mod_ids": [
         "findit"
       ],
-      "artifact": "corpus/build-artifacts/findit/cc-search/findit-1.4.6-cc-search-a5d973d.jar",
-      "sha256": "702d21764ceaff2094badac4410759304a6538d0744de54a30b1111753f55172",
+      "artifact": "corpus/build-artifacts/rc2/FindIt/findit-1.4.7-jakfutcc.jar",
+      "sha256": "d7f2eb72de3b2441fbb36bb85cd14b2e25c7bbbdf2bf7a1bc03402e24d003311",
       "patterns": [
         "findit-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/FindIt",
-      "source_commit": "a5d973d9972f94aa7905fe29478944d16c000d66",
+      "source_commit": "d4137f329019c1046a1d65ebefe21c24b6487343",
       "scopes": [
         "FindIt"
       ],
@@ -654,7 +688,12 @@
           "status": "Passing",
           "notes": "1.4.6/a5d973d: matched patched CC peers retain full-int results and floored search origin; matched no-CC bytes unchanged. Jakfut explicitly excludes mixed CC/non-CC player setups, so the mixed-presence codec observation is not a target blocker. Prior build/fixtures retained; no new dedicated gameplay or deployment."
         }
-      ]
+      ],
+      "filename": "findit-1.4.7-jakfutcc-d7f2eb72.jar",
+      "rc2_base": "1.4.7",
+      "rc2_upstream_commit": "3b6d5fa3ad1c5a80a691803d38fe34c356837200",
+      "rc2_note": "RC2 already uses signed int Y packets everywhere; retain upstream protocol and only carry negative-coordinate flooring.",
+      "source_note": "RC2 already implements full-int Y packets. Only our negative-coordinate flooring change remains."
     },
     {
       "name": "Forbidden Magic",
@@ -685,13 +724,13 @@
       "mod_ids": [
         "forestry"
       ],
-      "artifact": "corpus/build-artifacts/forestry/butterfly-flight/Forestry-4.11.37-cc-butterfly-de78a9f.jar",
-      "sha256": "c2dc859fac2faf2d1d66ce3fbc24f10366c047da541a6564bf27b52b39aaf74b",
+      "artifact": "corpus/build-artifacts/rc2/ForestryMC/Forestry-4.11.39-jakfutcc.jar",
+      "sha256": "cd9472440dc4fabee83252c4294fb2cd676cc7b72e136c4e1d93927b722ed1c5",
       "patterns": [
         "forestry-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/ForestryMC",
-      "source_commit": "de78a9f64149b16a63564ffc73e047eb65dff747",
+      "source_commit": "87a77431dfee3c1df0285fe8863c27f7e14babb2",
       "scopes": [
         "Forestry"
       ],
@@ -701,7 +740,10 @@
           "status": "Partial",
           "notes": "Localde78a9f includes butterfly destination/landing/climate/home-coordinate fixes; source fixtures pass, not actual flight/release. Cache/hatch correction6ed2b87 now passes244 real-server assertions at CC Y-32/0/64/512 and non-CC controls:18 delayed-output and2 injected stale-reference failures corrected. Controlled callbacks, not whole-farm assembly or natural unload/reload. Build/style and pending review follow-up complete. [Evidence](cache-placement-followups-20261004.md); butterfly details in cc-independent-fixes-20261004.md. Negative hive sentinel, fluid-depth scoring and column-based multiblock readiness remain. No push/deployment."
         }
-      ]
+      ],
+      "filename": "Forestry-4.11.39-jakfutcc-cd947244.jar",
+      "rc2_base": "4.11.39",
+      "rc2_upstream_commit": "f2e85073d33f50f9eec874cdabef41e1a85b297f"
     },
     {
       "name": "Forge Microblocks",
@@ -710,13 +752,13 @@
         "forgemultipart",
         "mcmultipart"
       ],
-      "artifact": "corpus/build-artifacts/forgemultipart/cube-packets/ForgeMultipart-1.7.15-cc-cube-packets-c16503a.jar",
-      "sha256": "51fec6a676bba142ba626d8c825446fa1208b42f0134296927d1b247916e33b0",
+      "artifact": "corpus/build-artifacts/rc2/ForgeMultipart/ForgeMultipart-1.7.16-jakfutcc.jar",
+      "sha256": "e2cd857ce850aba044f05a87d8c7fb70af0d4eb0ac7910e912091261618ebe97",
       "patterns": [
         "forgemultipart-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/ForgeMultipart",
-      "source_commit": "c16503a71cbc86e029dc9f029159164ecc4e2724",
+      "source_commit": "b248712a920f806ce9a892fefd4c82d085e6fdf3",
       "scopes": [
         "Forge Microblocks"
       ],
@@ -726,7 +768,10 @@
           "status": "Passing",
           "notes": "Local c16503a adds ready-cube recipients for helper descriptions, vanilla-block conversion and torch burnout smoke on scheduler fix e05c25d; pair with CCC1f7a43d. Prior full-Y restoration/watch bridge retained. Actual CC baseline/patched recipient controls pass at Y-32/64/512, including pending snapshots, unwatch and player replacement; physical non-CC fallback passes. Saved tick reload/detach tests also pass. Build/style,9 existing tests,42 scheduler/linkage checks and45 packet recipient vectors pass. No new real client-rendering/transport claim. Generic pre-existing full-snapshot/queued-delta ordering remains outside this CC patch. No public tests, source/Project push or player sync. [Scheduler](fmp-cube-ticks-20261004.md), [packets](fmp-cube-packets-20261004.md)."
         }
-      ]
+      ],
+      "filename": "ForgeMultipart-1.7.16-jakfutcc-e2cd857c.jar",
+      "rc2_base": "1.7.16",
+      "rc2_upstream_commit": "9eb69cdc13980cb3ab3d4508095ae18b27ebfdc7"
     },
     {
       "name": "Freecam",
@@ -756,13 +801,13 @@
       "mod_ids": [
         "gadomancy"
       ],
-      "artifact": "corpus/build-artifacts/gadomancy/cc-devices/gadomancy-1.5.15-cc-devices-f26d543.jar",
-      "sha256": "a605fb9687e46da238f69e5acf4855ab0a9e0c2d3dfa3213ecc35e26a9f0680a",
+      "artifact": "corpus/build-artifacts/rc2/Gadomancy/gadomancy-1.5.17-jakfutcc.jar",
+      "sha256": "fd31c6d8b32827f8d229986e5428df77deee8e10a349c2f6baa22f48a25d3b62",
       "patterns": [
         "gadomancy-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/Gadomancy",
-      "source_commit": "f26d5435db12a380c9ccb2deacb78ded357cfdd1",
+      "source_commit": "501962a0740c598982a29869bb598fdf11d4b6f7",
       "scopes": [
         "Gadomancy"
       ],
@@ -772,7 +817,10 @@
           "status": "Partial",
           "notes": "1.5.15/f26d543: second-pass caller review approved six claw/comparator/pylon/manipulator/jar guards, including final side-adjusted placement Y and unchanged no-CC limits. Build and bounds-helper/no-CC-linkage checks pass; installed CC min/max API signatures verified, not runtime mixin/device behavior. Reads may load cubes. Maze sessions still bypass CC loader invalidation. No new code/push/deployment; six real device workflows remain untested."
         }
-      ]
+      ],
+      "filename": "gadomancy-1.5.17-jakfutcc-fd31c6d8.jar",
+      "rc2_base": "1.5.17",
+      "rc2_upstream_commit": "b3cf0fea518f79d473e103f94838d9344773d162"
     },
     {
       "name": "Galacticraft Core",
@@ -780,13 +828,13 @@
         "galacticraftcore",
         "galacticraftmars"
       ],
-      "artifact": "corpus/build-artifacts/galacticraft/astro-miner-minimum/Galacticraft-3.4.33-GTNH-cc-astro-miner-minimum-e9521aa.jar",
-      "sha256": "9cd139b07f849bdb41e1d14704844c6aef398a87c3e5ea908c26ec174783afab",
+      "artifact": "corpus/build-artifacts/rc2/Galacticraft/Galacticraft-3.4.34-GTNH-jakfutcc.jar",
+      "sha256": "b0dc76f9bcb83b25dad1c9435d24a4f5a8179520cb30feab24bf9098a1860200",
       "patterns": [
         "galacticraft-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/Galacticraft",
-      "source_commit": "e9521aab562e19cf8e30094228ee04c1800dcf10",
+      "source_commit": "e628d37148615821a8d787790d29b6e380fec9ff",
       "scopes": [
         "Galacticraft Arc Lamp Height",
         "Galacticraft Astro Miner Minimum Height",
@@ -800,7 +848,10 @@
           "status": "Partial",
           "notes": "Local e9521aa on17eba74 moves Astro Miner deletion to64 blocks below physical minimum. Build/3 tests, Opus follow-up and2182 actual-server assertions/212 tick/96 placement cases pass:24 cutoff/6 base survival outcomes corrected, non-CC identical. [Miner evidence](galacticraft-astro-miner-minimum-20261006.md) also corrects the stale CC review-source provenance. Prior [rocket](galacticraft-rocket-minimum-20261006.md), [sealed cable](galacticraft-enclosed-cable-20261006.md), [Arc Lamp](galacticraft-arclamp-height-20261005.md), collector/oxygen fixes retained. Miner target-height policy, BlockVec3Dim/cache, redstone/air-restoration loading and dimension travel remain. Not natural mining/flight, powered-network/client proof or a blanket no-load guarantee. No public tests, push or deployment."
         }
-      ]
+      ],
+      "filename": "Galacticraft-3.4.34-GTNH-jakfutcc-b0dc76f9.jar",
+      "rc2_base": "3.4.34-GTNH",
+      "rc2_upstream_commit": "fbdc41b97e8178ac07e58ccaa93da2474b1e2664"
     },
     {
       "name": "Gendustry",
@@ -853,13 +904,13 @@
       "mod_ids": [
         "hardcoreenderexpansion"
       ],
-      "artifact": "corpus/build-artifacts/hardcoreenderexpansion/bat-target/HardcoreEnderExpansion-1.12.27-GTNH-cc-bat-target-b8ffd64.jar",
-      "sha256": "1decfb32a136549302daad3f338e8734a10059bfd46960536b04588de10867df",
+      "artifact": "corpus/build-artifacts/rc2/Hardcore-Ender-Expansion/HardcoreEnderExpansion-1.12.28-GTNH-jakfutcc.jar",
+      "sha256": "13c1fa769ac7c70b1b0554e31fbd22119c34b23cec55e2e51f09f68ed8251106",
       "patterns": [
         "hardcoreenderexpansion-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/Hardcore-Ender-Expansion",
-      "source_commit": "b8ffd64b2883b4eb04355e9b9ca124bfa0e77ef8",
+      "source_commit": "f6085b4581b57b811bb96ae203656be62410739e",
       "scopes": [
         "Hardcore Ender Expansion Attack Target",
         "Hardcore Ender Expansion Falling Bounds",
@@ -873,20 +924,23 @@
           "status": "Partial",
           "notes": "Local1.12.27-GTNH/b8ffd64 fixes assigned attack targets belowY1; build and575 server assertions/140 scenarios pass, six retarget/death outcomes corrected, ordinary/non-CC unchanged. [Target height](hee-bat-target-20261006.md). Prior513ede9 [falling bounds](hee-falling-height-20261006.md),5c7b52a [laser ground](hee-laser-ground-20261005.md),315215c [tile origins](hee-tile-origins-20261005.md),cfcad30 [positions](hee-position-storage-20261005.md) retained. Controlled callbacks, not natural combat/falls/End travel/client/disk-world lifecycle proof. No public tests/push/deployment. Egg block instant-fall/enderman teleport searches and destination policies remain; beacons store X/Z only, >32k laser short lower priority. Legacy End terrain/horizontal energy regions intentional; earlier EnergySavefile error undiagnosed."
         }
-      ]
+      ],
+      "filename": "HardcoreEnderExpansion-1.12.28-GTNH-jakfutcc-13c1fa76.jar",
+      "rc2_base": "1.12.28-GTNH",
+      "rc2_upstream_commit": "abfc9640f622389a81ca6e1c6b6acce928c0f44b"
     },
     {
       "name": "Hodgepodge",
       "mod_ids": [
         "hodgepodge"
       ],
-      "artifact": "corpus/build-artifacts/hodgepodge/cofh-commands/hodgepodge-2.7.196-cc-cofh-commands-500d025.jar",
-      "sha256": "bc6ee8f4f5029295639b7611e3716f25d2329ec6037afa65dc4dac993e40c01d",
+      "artifact": "corpus/build-artifacts/rc2/Hodgepodge/hodgepodge-2.7.215-jakfutcc.jar",
+      "sha256": "66d7744e5ba07311f45f23afa06700dce72e6f46cf7ff6805441afb92a7d2f15",
       "patterns": [
         "hodgepodge-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/Hodgepodge",
-      "source_commit": "500d0252b6a68bb0078653e87433b8788cfcf5df",
+      "source_commit": "12a00dca66e21f282368b49476325b341622e1b6",
       "scopes": [
         "Hodgepodge Automagy Inventarium Links",
         "Hodgepodge Automagy Local Origins",
@@ -911,7 +965,11 @@
           "status": "Partial",
           "notes": "Local500d025 on c96bfe4 enables full-height CoFH count/clear/replace with physical endpoint validation and dirty updates. Build/style/45 tests, Opus follow-up and10309 actual-server assertions/936 handler cases pass;234 former refusals corrected, no-CC identical. [CoFH commands](cofh-full-height-commands-20261005.md), prior [local origins](automagy-local-origins-20261005.md), [Inventarium links](automagy-inventarium-links-20261005.md), [XP Stone](automagy-xp-stone-20261005.md), [Thorns](witchery-thorns-height-20261005.md), [Trading Post](extrautils-trading-post-20261005.md), [large trees](bop-large-trees-20261004.md), [BoP trees](bop-planted-trees-20261004.md), [Sprouting](witchery-sprouting-20261004.md), [IC2 sync](ic2-cube-sync-20261004.md), [Witchery trees](witchery-tree-height-20261004.md), [Catwalks](catwalks-height-20261004.md), [shape guards](teleport-shape-neighbours-20261004.md), [HarvestCraft](harvestcraft-trees-20261004.md), [miners](ic2-miners-20261004.md). Anti-load options, simulation-distance wrappers and pending-tick index still need joint lifecycle work; inherited trade-packet cap remains. No natural lifecycle/visual proof, new public tests, source push or player deployment."
         }
-      ]
+      ],
+      "filename": "hodgepodge-2.7.215-jakfutcc-66d7744e.jar",
+      "rc2_base": "2.7.215",
+      "rc2_upstream_commit": "366e538a521fc88c8cdec407da4aff994376c315",
+      "rc2_note": "Skip RC2 unsigned bed-packet mask under CC, preserving existing signed-byte behavior without changing the wire format. Full-height bed packets remain outside this patch."
     },
     {
       "name": "HydroEnergy",
@@ -965,13 +1023,13 @@
       "mod_ids": [
         "infernalmobs"
       ],
-      "artifact": "corpus/build-artifacts/infernal-mobs/cc-teleport-height/InfernalMobs-1.10.6-GTNH-cc-teleport-height-f313c35.jar",
-      "sha256": "43109c3e48ee1bdaf82bfc16cd4ac6352e1c995025378364f6da1c3a401336bc",
+      "artifact": "corpus/build-artifacts/rc2/Infernal-Mobs/InfernalMobs-1.10.7-GTNH-jakfutcc.jar",
+      "sha256": "0a82136e2c4bdd8cc1122c125b0058815c39b34b5be856d8667687b484c6fa2f",
       "patterns": [
         "infernalmobs-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/Infernal-Mobs",
-      "source_commit": "f313c35e5cbcd049cebe2041c66a0e36a2d64af2",
+      "source_commit": "544e08f4327fda8a79734e9457ad629c272fb0ff",
       "scopes": [
         "Infernal Mobs"
       ],
@@ -981,20 +1039,23 @@
           "status": "Passing",
           "notes": "1.10.6-GTNH f313c35 on JakfutCC/fix-cubic-teleport-height bounds Ender/Ninja downward searches to 95 probes/world minimum, restores failed destinations and retains no-CC range. Second-pass callback/NBT lifecycle audit, build and actual-method/linkage fixtures pass. Entity-join restoration is reached through CC cube loading. blockExists includes persisted cubes; ground/collision reads can load/generate them, not loaded-only. No fresh gameplay/deployment; controlled modifier teleports, cube-edge collisions and runtime lifecycle remain untested."
         }
-      ]
+      ],
+      "filename": "InfernalMobs-1.10.7-GTNH-jakfutcc-0a82136e.jar",
+      "rc2_base": "1.10.7-GTNH",
+      "rc2_upstream_commit": "7427bdd1490dbdc54ef5983de3c671ae055cf38c"
     },
     {
       "name": "JourneyMap",
       "mod_ids": [
         "journeymap"
       ],
-      "artifact": "corpus/build-artifacts/journeymap/cc-safe-mapping/journeymap-5.2.20-cc-safe-mapping.jar",
-      "sha256": "7287ea51cfec453224b95c82b6cc64e80d131c4145641b1d40ea3b3fbb05e9b0",
+      "artifact": "corpus/build-artifacts/rc2/JourneyMapLegacy/journeymap-1.7.10-5.2.23.jakfutcc-fairplay.jar",
+      "sha256": "d0068eb0c49e8a5f48001b0e6e374fcdd6bec0407cedf9b6e6ae589b2abc36a0",
       "patterns": [
         "journeymap-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/journeymap-legacy",
-      "source_commit": "199aa8420488cbc77ac7c60e1f88434af535862d",
+      "source_commit": "77cffecf4f8f1659bd6931ae90a607a0799a81da",
       "scopes": [],
       "compatibility": [
         {
@@ -1003,20 +1064,23 @@
           "notes": "Org candidate 199aa84 previously FAILED with an unbounded ceiling scan. Newer local 5.2.20 safe-mapping jar bounds loaded-cube work and discards incomplete paints. Fresh build/helper checks, 408 actual-controller fixture attempts and 48 slice cases pass; renderer/world fixtures are not gameplay or mixin verification. Follow-up confirms world-minimum-dependent shading can flatten, disk automapping still requires vanilla .mca, and identity checks are not coherent terrain snapshots. Unloaded transparent roofs remain unknown. Broader integrations deferred; local patch uncommitted, no new deployment/push."
         }
       ],
-      "source_note": "Local cc-safe-mapping candidate; includes uncommitted changes. Partial compatibility."
+      "filename": "journeymap-1.7.10-5.2.23.jakfutcc-fairplay-d0068eb0.jar",
+      "rc2_base": "5.2.23",
+      "rc2_upstream_commit": "2e194152cbcb3f376d09becd203d4c53daf7e9ab",
+      "source_note": "Previously uncommitted safe-mapping overlay is included in this source commit."
     },
     {
       "name": "Logistics Pipes",
       "mod_ids": [
         "logisticspipes"
       ],
-      "artifact": "corpus/build-artifacts/logisticspipes/cc-handoff/logisticspipes-1.5.35-GTNH-cc-handoff-b76d2bf.jar",
-      "sha256": "d69e850f2209d90aee1de6c7a6ae029c211df5a3bed69906801e7d506a54243e",
+      "artifact": "corpus/build-artifacts/rc2/LogisticsPipes/logisticspipes-1.5.36-GTNH-jakfutcc.jar",
+      "sha256": "0a1b4654ca96b606e0a485fa2827daed058831cf021c89da39e828e6780345a8",
       "patterns": [
         "logisticspipes-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/LogisticsPipes",
-      "source_commit": "b76d2bf61e78633b2394e3c9df5d8a138e0d8ae3",
+      "source_commit": "e37658ca15f01fe3f9cb84691bcffd171b4840a8",
       "scopes": [
         "Logistics Pipes"
       ],
@@ -1026,7 +1090,10 @@
           "status": "Passing",
           "notes": "Localb76d2bf retains destination cube saving/fixed ordinary coordinate lookup fromf53e7ef, removes redundant neighbour notifications. Fresh/resumed Opus clear; builds and2808ordinary+2808CC+38robot checks pass. Real robot/board/pipe callback reproduces/fixes8 clean destination cubes;17-item transfer/serialization and absent-CC controls verified. [Evidence](cache-handoff-followups-20261005.md). No natural robot journey or crash-atomic save proof. Rejected items/stale references/foreign transport remain inherited limits. Special transmit queues routing metadata, not physical items. No push/deployment."
         }
-      ]
+      ],
+      "filename": "logisticspipes-1.5.36-GTNH-jakfutcc-0a1b4654.jar",
+      "rc2_base": "1.5.36-GTNH",
+      "rc2_upstream_commit": "df8e3fb02ca098601052a397cac2b1cba2bbd3d9"
     },
     {
       "name": "LootGames",
@@ -1102,13 +1169,13 @@
       "mod_ids": [
         "matter-manipulator"
       ],
-      "artifact": "corpus/build-artifacts/matter-manipulator/cc-build-height/matter-manipulator-0.1.55-GTNH-cc-build-height-08387cf.jar",
-      "sha256": "97bfd61d166cd9cf9a5ffbf76834cfad2e324a7be8d79b4ac925ce3788d19bee",
+      "artifact": "corpus/build-artifacts/rc2/MatterManipulator/matter-manipulator-0.1.61-GTNH-jakfutcc.jar",
+      "sha256": "d204194b8bc695c3ced11c1aade0e8099694d591063524170576c6a451aa166a",
       "patterns": [
         "matter-manipulator-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/MatterManipulator",
-      "source_commit": "08387cf8dfb12f1f06f94a17c3e862477a0655fd",
+      "source_commit": "1911cbfeb7fd8926fdca258fd8a119d74964c598",
       "scopes": [
         "Matter Manipulator"
       ],
@@ -1118,7 +1185,10 @@
           "status": "Passing",
           "notes": "0.1.55-GTNH 08387cf on JakfutCC/fix-cubic-build-height: build queue uses CC bounds/exact loaded-cube checks; proxy getters delegate bounds and strip without CC. Second-pass caller review/build, fresh NBT test, 1520 gate cases and actual production-jar stripping pass. Unavailable queue entries are skipped permanently, not retried; separate move/wireless-link reads can load/generate cubes. No new source change, game test or deployment. Needs a powered/material-backed build/move workflow; direct block placement bypasses the patch."
         }
-      ]
+      ],
+      "filename": "matter-manipulator-0.1.61-GTNH-jakfutcc-d204194b.jar",
+      "rc2_base": "0.1.61-GTNH",
+      "rc2_upstream_commit": "3abd8ad73c9c169208739d774e83ee39d40654a2"
     },
     {
       "name": "Mine & Blade Battlegear 2",
@@ -1148,13 +1218,13 @@
       "mod_ids": [
         "modularui2"
       ],
-      "artifact": "corpus/build-artifacts/modularui2/preview-origin/modularui2-2.3.88-1.7.10-preview-origin-5d3c00a.jar",
-      "sha256": "c7e739293487e4b802217e1cd4d56910fc12d5d431ac4bfe06e46020baaafd97",
+      "artifact": "corpus/build-artifacts/rc2/ModularUI2/modularui2-2.3.92-1.7.10-jakfutcc.jar",
+      "sha256": "8b86a506252c53e904579ec337c9d5015bef95ddbb022147a54abe4c644e507f",
       "patterns": [
         "modularui2-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/ModularUI2",
-      "source_commit": "5d3c00a24e6c310ca0bfc1dc20b4212aaa3b01ac",
+      "source_commit": "7df44be2034cd19c2ccde2cfb77df614328c014e",
       "scopes": [],
       "compatibility": [
         {
@@ -1162,7 +1232,10 @@
           "status": "Partial",
           "notes": "2.3.88-1.7.10/5d3c00a floors entity-centered ArraySchema XYZ, retaining Y+0.5 offset; prior build/one test/3993 factory checks retained. Rechecked2026-10-04: ArraySchema snapshots already use local indices; no active absolute-height MapSchema caller found in current Java/Kotlin/Scala corpus (only commented demo). DummyWorld stores ordinary chunks; MapSchema keys, SchemaWorld tracking, tile callbacks, metadata/neighbors and World ray tracing need a coherent preview-world API decision, not widened Y flags. Remains deferred without edits/gameplay or blanket invisible-preview claim."
         }
-      ]
+      ],
+      "filename": "modularui2-2.3.92-1.7.10-jakfutcc-8b86a506.jar",
+      "rc2_base": "2.3.92-1.7.10",
+      "rc2_upstream_commit": "104df5f739b9d4b9fc7e3dcb0cfdf02c35d362ce"
     },
     {
       "name": "MrTJPCore",
@@ -1214,13 +1287,13 @@
       "mod_ids": [
         "notenoughitems"
       ],
-      "artifact": "corpus/build-artifacts/cc-core-compat/NotEnoughItems-2.8.130-cc-spawn-overlay-d0acb22.jar",
-      "sha256": "d0d40de685057feb3450e1514b6c7eaa095f6c929f5f6f7f0c1409e1fd8ffc43",
+      "artifact": "corpus/build-artifacts/rc2/NotEnoughItems/NotEnoughItems-2.8.155-GTNH-jakfutcc.jar",
+      "sha256": "1ffa635f1e57ef59111715b75e02e2346b5cafedc7fd6bfc5589ed4f1016077b",
       "patterns": [
         "notenoughitems-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/NotEnoughItems",
-      "source_commit": "d0acb2292f0a8bf035e3b442d7598bc5d6714efe",
+      "source_commit": "368ebdb6e961f46276ac1babe08e5e3234abb38d",
       "scopes": [
         "NotEnoughItems"
       ],
@@ -1230,20 +1303,23 @@
           "status": "Passing",
           "notes": "2.8.130 candidate d0acb22 on JakfutCC/fix-cubic-spawn-overlay. Second-pass review traced cache generation, drawing and full-Y spawn/light queries; fresh execution passes all 81 tests. 2026-09-20 runtime/screenshots: F7 marks absent from the Y-32 floor in baseline, present with patch; positive/high-Y controls also render. Bounded altitude-relative scan with real cubic-provider detection. No fresh game test or certification of every NEI feature; cached mark counts alone are not visual proof."
         }
-      ]
+      ],
+      "filename": "NotEnoughItems-2.8.155-GTNH-jakfutcc-1ffa635f.jar",
+      "rc2_base": "2.8.155-GTNH",
+      "rc2_upstream_commit": "c020ecbf1f563876b6113766296c4b8b1c0c0814"
     },
     {
       "name": "OpenBlocks",
       "mod_ids": [
         "openblocks"
       ],
-      "artifact": "corpus/build-artifacts/openblocks/cubic-xp-drain/OpenBlocks-1.12.21-cubic-xp-drain-9fbebf4.jar",
-      "sha256": "4538220750b803eb81a1e3a5e65aad4fd7a29ff41ac03edfa1beb8cb39f1459f",
+      "artifact": "corpus/build-artifacts/rc2/OpenBlocks/OpenBlocks-1.12.22-GTNH-jakfutcc.jar",
+      "sha256": "037047f781c103438533373141cb17956d2b6caf3ed0eb73e0bfbcb349921f49",
       "patterns": [
         "openblocks-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/OpenBlocks",
-      "source_commit": "9fbebf4612280eac1ff68eb51aece28979d63c3c",
+      "source_commit": "26a233af97930d78aa72b35f390d989f35219423",
       "scopes": [
         "OpenBlocks"
       ],
@@ -1253,20 +1329,23 @@
           "status": "Partial",
           "notes": "1.12.21-GTNH/9fbebf4 on JakfutCC/fix-cubic-xp-drain: tank/Guide/XP fixes reviewed with no new correctness regression. 143 XP, 50 Guide and 7202 tank stub-fixture cases retained, no gameplay. Loaded guards cover column transfers/survival placement, not GenericTank neighbor discovery (can load a saved cube) or creative Guide fill (direct bounded writes); these inherited gaps remain. XP search is limited to256 blocks with100-tick retries. Original Guide report still unproven. Graves6..249 defaults, map/projector byte heights and rope lifecycle remain. Stock beta-3 tanks disabled."
         }
-      ]
+      ],
+      "filename": "OpenBlocks-1.12.22-GTNH-jakfutcc-037047f7.jar",
+      "rc2_base": "1.12.22-GTNH",
+      "rc2_upstream_commit": "ed3d36624c879782df41cbf83e0837441e04e14a"
     },
     {
       "name": "OpenComputers",
       "mod_ids": [
         "opencomputers"
       ],
-      "artifact": "corpus/build-artifacts/opencomputers/cc-rack-lighting/OpenComputers-1.12.61-GTNH-cc-rack-lighting-c601052.jar",
-      "sha256": "afb0cb9dd395cb9b8e75af9b78b88c1bfee401a0659a21f7d3b9f6c464cb961f",
+      "artifact": "corpus/build-artifacts/rc2/OpenComputers/OpenComputers-1.12.64-GTNH-jakfutcc.jar",
+      "sha256": "9bdc119f3bd873ead49b409bab7c21543b9e2cb3d000ae478fc5a663709c9900",
       "patterns": [
         "opencomputers-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/OpenComputers",
-      "source_commit": "c601052bcd764fb707883044898279a146b6a8fe",
+      "source_commit": "6bcb1cf3aa6b7c4d0c94b8d2902699800ab15521",
       "scopes": [
         "OpenComputers"
       ],
@@ -1276,7 +1355,10 @@
           "status": "Partial",
           "notes": "1.12.61-GTNH/c601052 rack fix rechecked through actual rendering callers. Build, forced 25-test suite and 15,552 old/current Scala brightness cases pass. A placed rack with controlled front lighting is sufficient for visual testing; powered activity is a separate renderer, correcting the older deferral note. Chunkloader restart still restores X/Z without host Y; needs shared cube-ticket policy, not a small height patch. Already-loaded cubes may stay forced. Signed 24-bit GUI Y deferred; no new gameplay/deployment or source change."
         }
-      ]
+      ],
+      "filename": "OpenComputers-1.12.64-GTNH-jakfutcc-9bdc119f.jar",
+      "rc2_base": "1.12.64-GTNH",
+      "rc2_upstream_commit": "1e4559ff5f2443695cb28c7cdc9fba87219a862b"
     },
     {
       "name": "OpenMods",
@@ -1353,13 +1435,13 @@
       "mod_ids": [
         "personalspace"
       ],
-      "artifact": "corpus/build-artifacts/personalspace/cc-portal-linking/personalspace-1.0.40-cc-portal-search-53f151c.jar",
-      "sha256": "a6b9a2bb914132c2541caa9a3f8319d2885ebf6abcae3e961b865055d7f8965e",
+      "artifact": "corpus/build-artifacts/rc2/PersonalSpace/personalspace-1.0.41-jakfutcc.jar",
+      "sha256": "57e357bae56525e5107478afebe87e9c58dc2c6f9e38619c4cdec41c5c52d113",
       "patterns": [
         "personalspace-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/PersonalSpace",
-      "source_commit": "53f151ce66ee5665ae89dc0faa0ac5a4108e6761",
+      "source_commit": "cac505120e25b3290ffbc334700560b71e21d255",
       "scopes": [
         "PersonalSpace"
       ],
@@ -1369,7 +1451,10 @@
           "status": "Passing",
           "notes": "Local53f151c bounded-search correction now verified with272 real server relinking scenarios across CC Y-32/64/512 and absent-CC Y64, eight out-of-area outcomes corrected. Builds/helper checks pass, signed bounds/NBT links retained. [Evidence](portal-gate-followups-20261004.md). Controlled same-dimension callbacks, not player travel/disk reload/new dimension. Legacy flat-layer presets/generation are accepted under the 2026-10-06 scope; a wider dimension would be separate work. No remaining identified mod-local target blocker. No new production edit, gameplay claim, push or deployment."
         }
-      ]
+      ],
+      "filename": "personalspace-1.0.41-jakfutcc-57e357ba.jar",
+      "rc2_base": "1.0.41",
+      "rc2_upstream_commit": "a292401e0a067e37e7e02abee8bd48b58a6e1571"
     },
     {
       "name": "Railcraft",
@@ -1399,13 +1484,13 @@
       "mod_ids": [
         "randomthings"
       ],
-      "artifact": "corpus/build-artifacts/randomthings/bloodmoon/RandomThings-2.7.9-cc-bloodmoon-0ff842b.jar",
-      "sha256": "eefd0f1e387fcb8a35ff337860bb573a6de92a1970558494fdf0724bf4520d3d",
+      "artifact": "corpus/build-artifacts/rc2/Random-Things/RandomThings-2.7.11-jakfutcc.jar",
+      "sha256": "72ce77e84f47bfd6b48585863f4c469cc4201657c68ccd671756cb61f62ac251",
       "patterns": [
         "randomthings-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/Random-Things",
-      "source_commit": "0ff842bf32e136f880b5464b234e9958858545f9",
+      "source_commit": "f57c76bd86c2baa298574fdbfa4fa68964dfdf2a",
       "scopes": [
         "RandomThings"
       ],
@@ -1415,7 +1500,10 @@
           "status": "Partial",
           "notes": "Local2.7.9/0ff842b restores Blood Moon cap/range/sky/tag rules in CC's custom spawner via scoped optional late mixin, with exception-safe flag reset. Build/style and64 final-jar server assertions pass atY-32/64/512 plus physically absent-CC controls;21 stock failures reproduced. Controlled spawning on fresh surface-tracked columns, not natural rates/client visuals or broken saved-heightmap repair. EndlessIDs biome-painter overwrite and full-height render notifications remain unresolved. No public tests, push or deployment; [evidence](randomthings-bloodmoon-20261004.md)."
         }
-      ]
+      ],
+      "filename": "RandomThings-2.7.11-jakfutcc-72ce77e8.jar",
+      "rc2_base": "2.7.11",
+      "rc2_upstream_commit": "ee48e41932c9996acc69f95ca341b32f3cc9c1a3"
     },
     {
       "name": "RegionLib",
@@ -1438,13 +1526,13 @@
       "mod_ids": [
         "salisarcana"
       ],
-      "artifact": "corpus/build-artifacts/salisarcana/cc-node-biome/salisarcana-1.1.71-GTNH-cc-node-reach-53e29de.jar",
-      "sha256": "741b134ac7f95eabff0a472d08a75ad596af81a5b19c2b61cd47f99a4860e89a",
+      "artifact": "corpus/build-artifacts/rc2/Salis-Arcana/salisarcana-v2.7.0-jakfutcc.jar",
+      "sha256": "72f4a2a5fe39d650cd5e9336545a5b84a9c937baf09921f7c1f6eee8376f799c",
       "patterns": [
         "salisarcana-*.jar"
       ],
-      "source_repository": "https://github.com/GTNewHorizons/Salis-Arcana",
-      "source_commit": "53e29debeb5e583c710f6d95da67d0ec77f5291e",
+      "source_repository": "https://github.com/rndmorris/Salis-Arcana",
+      "source_commit": "c88fbfcb838fa27e15bc3567a305ba2118d8ab2f",
       "scopes": [
         "Salis Arcana"
       ],
@@ -1454,20 +1542,23 @@
           "status": "Passing",
           "notes": "Local53e29de dynamic-reach correction reproduced with actual woven TC node callback:64 baseline/patched CC/non-CC cases,12 far targets wrongly refused by baseline now break. Config explicitly enabled, still defaults off. Builds and105 bounds/ray,136 helper/render,24 absent-CC checks pass. [Evidence](node-note-followups-20261004.md). Controlled targets, not natural node farms/biome visuals; arbitrary block-neighbour reads and non-CC paths are not certified loaded-only. No large-node benchmark or new production edit/push/deployment."
         }
-      ]
+      ],
+      "filename": "salisarcana-v2.7.0-jakfutcc-72f4a2a5.jar",
+      "rc2_base": "v2.7.0",
+      "rc2_upstream_commit": "2205bc067c0a4f9aabaa30a74007c14cf1c9b1f3"
     },
     {
       "name": "ServerUtilities",
       "mod_ids": [
         "serverutilities"
       ],
-      "artifact": "corpus/build-artifacts/serverutilities/cc-seek-block/ServerUtilities-2.4.9-cc-seek-block-b4b3b3f.jar",
-      "sha256": "5db2122431a3fa4249b7e8fa166882b6fbb90818fd9fb053952460796faaf674",
+      "artifact": "corpus/build-artifacts/rc2/ServerUtilities/ServerUtilities-2.4.14-jakfutcc.jar",
+      "sha256": "e828473053bfc8168fc75ba9fb598e2c3772e8860a1c76b013184afcdedf8062",
       "patterns": [
         "serverutilities-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/ServerUtilities",
-      "source_commit": "b4b3b3f0fa5c5d50f264da29cfebebe9f42f63fa",
+      "source_commit": "ab87794ed41212d3ea962dac0049937aeb45acdf",
       "scopes": [
         "ServerUtilities"
       ],
@@ -1477,7 +1568,10 @@
           "status": "Partial",
           "notes": "2.4.9 seek_block fix b4b3b3f on fix-cubic-seek-block scans only resident loaded cubes at signed Y and honors the positive total result cap across columns/dimensions. Reviewed build and actual-command fixtures pass, including absent CC; no gameplay/deployment. Still synchronous: no-match work is loaded cubes x4096. RTP/claim-map height and snapshot policy, cube-aware ticket restoration, and backup flush/claim filtering remain deferred. CC region files bypass the claim filter, not the backup itself."
         }
-      ]
+      ],
+      "filename": "ServerUtilities-2.4.14-jakfutcc-e8284730.jar",
+      "rc2_base": "2.4.14",
+      "rc2_upstream_commit": "46e0b9ac879f31d36e5fb009748860785a5054a1"
     },
     {
       "name": "SG Craft",
@@ -1530,13 +1624,13 @@
       "mod_ids": [
         "specialmobs"
       ],
-      "artifact": "corpus/build-artifacts/specialmobs/teleport-shapes/SpecialMobs-3.7.5-cc-teleport-shapes-2802f44.jar",
-      "sha256": "f3cf684fceefc6034ceccbc4d0ed2ba6fb7ba8dd6f201ce5b57ba0331bc63aaf",
+      "artifact": "corpus/build-artifacts/rc2/SpecialMobs/SpecialMobs-3.7.8-jakfutcc.jar",
+      "sha256": "84a3b39f7764eb2083c8fddc874cea17f6a19938a51d08d15e65a76f81f25ddd",
       "patterns": [
         "specialmobs-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/SpecialMobs",
-      "source_commit": "2802f4405a1f2fd1f93e34e99c8d76727156a147",
+      "source_commit": "3711f5ed4d5ce4fc24a7049cc7738355a3c17846",
       "scopes": [
         "Special Mobs"
       ],
@@ -1546,7 +1640,10 @@
           "status": "Passing",
           "notes": "Local160595b/2802f44 on7ff2324 plus CCf16be0a fix shared teleport shape-neighbour reads and keep flying destinations inside physical bounds. Earlier lava sampling retained. Build/style and actual callbacks pass within526 combined CC/non-CC checks; missing door/fence loads and first-patch out-of-world flyers reproduced. EnderCreeper ordinary cases covered, not its door-floor case because it requires normal-cube support. No natural AI/clone combat/client claim or deployment. [Evidence](shared-teleport-collision-20261004.md), [lava](specialmobs-lava-spawning-20261004.md), [custom teleports](specialmobs-cubic-teleports-20261002.md)."
         }
-      ]
+      ],
+      "filename": "SpecialMobs-3.7.8-jakfutcc-84a3b39f.jar",
+      "rc2_base": "3.7.8",
+      "rc2_upstream_commit": "47e91a6a086902932f9b3c1f49cf8aec3945d4f6"
     },
     {
       "name": "Steve's Carts 2",
@@ -1645,14 +1742,14 @@
       "mod_ids": [
         "thaumicexploration"
       ],
-      "artifact": "corpus/build-artifacts/thaumicexploration/cc-taint/Thaumic-Exploration-1.5.28-GTNH-cc-taint-6e17e48.jar",
-      "sha256": "707e1984cffa6b443b94cd377952b2d463e512198da899f12893f5d7a5fa9601",
+      "artifact": "corpus/build-artifacts/rc2/Thaumic_Exploration/Thaumic-Exploration-1.5.29-GTNH-jakfutcc.jar",
+      "sha256": "d0409bb504465d674cf51f4ec9b751ab6359a0fdc94d1a1f6f6847fe203ccb3d",
       "patterns": [
         "thaumic-exploration-*.jar",
         "thaumicexploration-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/Thaumic_Exploration",
-      "source_commit": "6e17e4800dc97f5ece7a56d2a76e25e0dc15df68",
+      "source_commit": "31acc4e6006c00503acb4177cbaa2d9abf4aa076",
       "scopes": [
         "Thaumic Exploration"
       ],
@@ -1662,7 +1759,10 @@
           "status": "Partial",
           "notes": "Local65a3b8a biome floors plus6e17e48 safe potion expiry pass builds, Opus review/follow-up and actual CC/non-CC callbacks:24 boundary classifications and4 skipped later-effect ticks corrected. Hodge catches old CME, not a reproduced GTNH crash. Withdrawal injected; charmTaint is unregistered, its marker-enabled handler test is synthetic. Earlier boots/urn/node/tentacle evidence retained; Soul Brazier tickets and both-side equipment mutation deferred. See placement-taint-followups-20261005.md; no client/gameplay/push/deployment claim."
         }
-      ]
+      ],
+      "filename": "Thaumic-Exploration-1.5.29-GTNH-jakfutcc-d0409bb5.jar",
+      "rc2_base": "1.5.29-GTNH",
+      "rc2_upstream_commit": "16723f1eceab6bb2da267ae92ed96a57d1c5948b"
     },
     {
       "name": "Thaumic Insurgence",
@@ -1692,13 +1792,13 @@
       "mod_ids": [
         "thaumictinkerer"
       ],
-      "artifact": "corpus/build-artifacts/thaumictinkerer/cc-connector/ThaumicTinkerer-2.12.32-cc-connector-6ae2874.jar",
-      "sha256": "aa5165f9eb66f71e1622d036ac377a81c4b3087feee114efaeab23453463ba9e",
+      "artifact": "corpus/build-artifacts/rc2/ThaumicTinkerer/ThaumicTinkerer-2.12.33-jakfutcc.jar",
+      "sha256": "9e0e9c70529784d24eb9158e1fadbdfa38f07480db0033572d0b8e55f788e85d",
       "patterns": [
         "thaumictinkerer-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/ThaumicTinkerer",
-      "source_commit": "6ae2874f2f7a422599ad9b261acdf2ab4f3c3b3a",
+      "source_commit": "6b3a7610e09a05d43f556fa069dd810df0d794c8",
       "scopes": [
         "Thaumic Tinkerer"
       ],
@@ -1708,20 +1808,23 @@
           "status": "Partial",
           "notes": "Local6951d24 feedback plus6ae2874 wording reviewed/built. Actual binder/golem callbacks at CC Y-32/-1/64/512 preserve unloaded selection without loading; eight silent refusals now warn, loaded links work, non-CC controls unchanged. 369 runtime plus116 source/stub assertions; not client chat/relog/resource-transfer proof. Old flagless Y-1 links, Deep Dark destination and foreign moved-tile lifecycle remain separate. See connector-refusal-followups-20261005.md; no push/deployment."
         }
-      ]
+      ],
+      "filename": "ThaumicTinkerer-2.12.33-jakfutcc-9e0e9c70.jar",
+      "rc2_base": "2.12.33",
+      "rc2_upstream_commit": "e4c8acdd4fa95ba6b80e165d248a3bd3f5392762"
     },
     {
       "name": "ThaumicHorizons",
       "mod_ids": [
         "thaumichorizons"
       ],
-      "artifact": "corpus/build-artifacts/thaumichorizons/entity-coordinates/thaumichorizons-1.8.22-entity-coordinates-486351e.jar",
-      "sha256": "6d0ae7e332f29cf0e738b93103739c6b849910e86a22797e452287c0ba8ebe78",
+      "artifact": "corpus/build-artifacts/rc2/ThaumicHorizons/ThaumicHorizons-1.8.27-jakfutcc.jar",
+      "sha256": "b310f25ba28f2d604ebd7e9514077179b9b99ae8805d01a81388c56496339dcd",
       "patterns": [
         "thaumichorizons-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/ThaumicHorizons",
-      "source_commit": "486351e2deab61696d7cf400ac796b04cbff2681",
+      "source_commit": "75b0fc347cbb4c76acd8405547021e516bb24b5c",
       "scopes": [
         "ThaumicHorizons"
       ],
@@ -1731,20 +1834,23 @@
           "status": "Partial",
           "notes": "1.8.22/486351e on org fix-negative-entity-block-coordinates floors Nightmare and taint-pig local reads/writes/FX; Nightmare recomputes its origin after movement. Reviewed clean26s build and 77 actual-callback stub assertions pass. Earlier cloud bounds retained. Nightmare teleport and pocket-plane generation remain legacy; extreme-int ray subtraction is beyond current scope. Cloud still needs live moving-camera testing; no new gameplay/deployment."
         }
-      ]
+      ],
+      "filename": "ThaumicHorizons-1.8.27-jakfutcc-b310f25b.jar",
+      "rc2_base": "1.8.27",
+      "rc2_upstream_commit": "5a6b05f13c5af07b5592d2e633e3e73859ad2f23"
     },
     {
       "name": "The Twilight Forest",
       "mod_ids": [
         "twilightforest"
       ],
-      "artifact": "corpus/build-artifacts/twilightforest/passive-flight/TwilightForest-2.7.40-cc-passive-flight-dde26da.jar",
-      "sha256": "09070eefe5add1287817ee66977872f94983200367205945854d2a9ddf09a18d",
+      "artifact": "corpus/build-artifacts/rc2/twilightforest/TwilightForest-2.7.44-jakfutcc.jar",
+      "sha256": "9f377558f037bc3f8cf8f9978bb32d2619b7439f99da1036fb1cee8a51d1d816",
       "patterns": [
         "twilightforest-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/twilightforest",
-      "source_commit": "dde26da4c779f486098b30a47cee6b84f0b212c7",
+      "source_commit": "0369e5660eacaaf3e3d5763a1ed13073c6e46c9d",
       "scopes": [
         "The Twilight Forest",
         "Twilight Forest Passive Flight Targets",
@@ -1760,7 +1866,10 @@
           "status": "Partial",
           "notes": "Local dde26da fixes tiny-bird/firefly/raven target bounds and negative block origins. Build/3 tests, Opus and17001 actual-server assertions/1740 AI callbacks pass:132 height-validity/60 proximity/336 origin paths corrected, equivalent controls/RNG retained. [Flight evidence](tf-passive-flight-20261006.md). Negative-XZ rounding also corrected without CC; not natural flight/client proof. Prior [particles](tf-particle-faces-20261005.md), [winter/mushroom](tf-winter-mushroom-bounds-20261005.md), [oak](tf-canopy-oak-bounds-20261005.md), [soil](canopy-controller-followups-20261005.md)/[saplings](tf-sapling-envelopes-20261004.md)/[large trees](tf-large-tree-bounds-20261004.md) retained. Hollow structures/other decoration, portal policy and biome/loading lifecycle remain. No public tests, push or deployment."
         }
-      ]
+      ],
+      "filename": "TwilightForest-2.7.44-jakfutcc-9f377558.jar",
+      "rc2_base": "2.7.44",
+      "rc2_upstream_commit": "47a5131697e42678986294faa34b1032b1704a4c"
     },
     {
       "name": "Tinkers Mechworks",
@@ -1790,13 +1899,13 @@
       "mod_ids": [
         "tconstruct"
       ],
-      "artifact": "corpus/build-artifacts/tinkersconstruct/tall-smeltery/TConstruct-1.14.108-GTNH-cc-tall-smeltery-r1.jar",
-      "sha256": "68865d468aca2d2f507dbca3336e166ebe635721521ddc6eb20f34047437f8e9",
+      "artifact": "corpus/build-artifacts/rc2/TinkersConstruct/TConstruct-1.14.118-GTNH-jakfutcc.jar",
+      "sha256": "9d66044d7c57cbcd803cd468a197346ce4f6bf5c2832a7c4df9ac6d4d0005c15",
       "patterns": [
         "tconstruct-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/TinkersConstruct",
-      "source_commit": "d11504bbb5acc253476a2b04c8f2f99ca7a9215b",
+      "source_commit": "fc0eed2af08cc8646b9ec3a01207eac0fe162347",
       "scopes": [
         "TConstruct tall smeltery",
         "Tinkers' Construct"
@@ -1807,20 +1916,23 @@
           "status": "Partial",
           "notes": "Local d11504b on68157c7 makes active smeltery vertical surveys iterative; count/order/bottom/binding retained. Build/style,960 source comparisons,176 floor checks, review and78 actual-server calls pass:8192-layer tower overflows baseline downward/full validation, patched completes;32768 bound wall pieces,8192 slots and17 NBT/wire roundtrips verified. Y-32/64/512 smaller controls and physical non-CC identical. Barricade68157c7 follow-up reviewed;265 helper/12294 absent-CC checks repeated, not player placement. [Placement follow-up](cache-placement-followups-20261004.md). Cube-arrival/lifecycle, unused legacy TankLayerScan API and beyond32k Mantle transport remain separate. No player GUI/melting/full save-reload claim, public tests, push or deployment. [Smeltery evidence](tinkers-tall-smeltery-20261004.md)."
         }
-      ]
+      ],
+      "filename": "TConstruct-1.14.118-GTNH-jakfutcc-9d66044d.jar",
+      "rc2_base": "1.14.118-GTNH",
+      "rc2_upstream_commit": "115c339a625236738833ad5408c6f597db51bc77"
     },
     {
       "name": "Village Names",
       "mod_ids": [
         "villagenames"
       ],
-      "artifact": "corpus/build-artifacts/villagenames/guardian-targets/VillageNames-4.5.17-guardian-targets-3546c70.jar",
-      "sha256": "7b18fc5c88e940e144c784b675ab97f25fcb6d605fbf1c9c72e9a57f68f0a0b0",
+      "artifact": "corpus/build-artifacts/rc2/VillageNames/VillageNames-4.5.19-GTNH-jakfutcc.jar",
+      "sha256": "c7d5baf49518983efa25579d11d01b09c4cf776672718465017f5bcbb51610dc",
       "patterns": [
         "villagenames-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/VillageNames",
-      "source_commit": "3546c70c71bb719c33ee50a507b94c6a281bbfb1",
+      "source_commit": "65a6db50b8def3a9ae65ec5b212965fc9f73d37d",
       "scopes": [
         "Village Names"
       ],
@@ -1830,20 +1942,23 @@
           "status": "Partial",
           "notes": "4.5.17-GTNH/3546c70 floors fractional guardian Y in both navigation entry points. Vanilla random wander already returns integer targets, so normal in-tree caller is unchanged; no live wandering bug proved. Clean44s build and721 actual-method assertions pass (144 synthetic fractional mismatches); path search stubbed. Legacy surface generation scans Y>0; concrete powder Y0 falling/timeout path also removes source before an instant downward-to-floor World scan, so widening needs bounded-loading policy. 8-bit-Y node key has no proved alias failure in default short search. Larger generation/falling/navigation work deferred; saved sign XYZ are ints. No new gameplay/deployment."
         }
-      ]
+      ],
+      "filename": "VillageNames-4.5.19-GTNH-jakfutcc-c7d5baf4.jar",
+      "rc2_base": "4.5.19-GTNH",
+      "rc2_upstream_commit": "71822cb653054ff908cb3994c35c8a58d6c62f32"
     },
     {
       "name": "VisualProspecting",
       "mod_ids": [
         "visualprospecting"
       ],
-      "artifact": "corpus/build-artifacts/visualprospecting/cc-refusal/visualprospecting-1.5.39-cc-refusal-acea97f.jar",
-      "sha256": "f107d2703100f3ece8a6f3f13235e3db098d62e4699435df017dd6c370882c08",
+      "artifact": "corpus/build-artifacts/rc2/VisualProspecting/visualprospecting-1.5.41-jakfutcc.jar",
+      "sha256": "2d35dc1a224a32942b8274b65515faedcb8d36918b86068e0380073953558300",
       "patterns": [
         "visualprospecting-*.jar"
       ],
       "source_repository": "https://github.com/GTNewHorizons/VisualProspecting",
-      "source_commit": "acea97fb8b44472133090802918a923d76dd830f",
+      "source_commit": "fdd26c62caeaf5210f6e0ac37f77bd35962a6663",
       "scopes": [
         "VisualProspecting"
       ],
@@ -1853,7 +1968,10 @@
           "status": "Partial",
           "notes": "Localacea97f typed cubic rebuild refusal reviewed/built; existingb92f886 guard still rejects before reset. 324 source/stub command/startup assertions per version plus56 guard checks, temporary cache markers unchanged; not a real VP cache codec/recovery or live overlay test. Cubic reader, custom offline dimension folders and discarded cache recovery remain separate; old cc-recache binary provenance unknown. See connector-refusal-followups-20261005.md; no push/deployment."
         }
-      ]
+      ],
+      "filename": "visualprospecting-1.5.41-jakfutcc-2d35dc1a.jar",
+      "rc2_base": "1.5.41",
+      "rc2_upstream_commit": "268e67352ea518803cf77a22206b34526f79462e"
     },
     {
       "name": "WarpTheory",

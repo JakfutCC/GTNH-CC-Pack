@@ -143,7 +143,8 @@ New writes default to Zstandard; new worlds use compact empty-cube storage.
 Older unpatched CC cannot read all these records. The converter UI is not included.
 
 Target: {manifest['target']}
-This is a client patch set for an existing GTNH instance.
+Start with a normal instance of that pack version before installing these patches.
+This ZIP does not upgrade the base pack's configs, quests or launcher files.
 The per-mod evidence and remaining limitations are recorded in manifest.json.
 '''
     public_manifest = dict(manifest, patches=[{k: v for k, v in e.items() if k != "artifact"}

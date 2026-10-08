@@ -1,8 +1,11 @@
 # GTNH CC patches
 
 One download for the CubicChunks compatibility patches for **GT New Horizons
-2.9.0-beta-3 (Java 17–26)**. Download the patch ZIP from
+2.9.0-RC-2 (Java 17–26)**. Download the patch ZIP from
 [Releases](https://github.com/JakfutCC/GTNH-CC-Pack/releases).
+
+Start with a normal **RC2 instance**. This ZIP does not upgrade a beta 3
+instance's configs, quests or launcher files.
 
 1. Close Minecraft.
 2. Copy everything inside the ZIP's `mods` folder into your instance's `mods` folder.
@@ -14,7 +17,7 @@ versions, and keep the exact jar filenames included in this ZIP. They run in
 their own directory. There are no backups or replacement-presence checks.
 Copy all included jars before running the script.
 
-The initial bundle contains 83 jars, including CubicChunks **v0.1.25-alpha-pre**
+The bundle contains 83 jars, including CubicChunks **v0.1.25-alpha-pre**
 with our storage and compatibility changes, and RegionLib. ArchaicFix handles
 the Phosphor exclusion automatically; no config edit is needed. Angelica includes
 both the Celeritas changes and the shader-cache fix.
@@ -23,6 +26,9 @@ CC defaults to Zstandard writes and compact empty-cube storage for new worlds.
 Older unpatched CC versions cannot read all of these records. This bundle does
 not include the world-converter UI. Existing partial compatibility work is
 included; the bundle does not make every mod fully cubic-compatible.
+
+See [beta 3 → RC2 changes](RC2-CHANGES.md) for the base mod versions and patch
+changes. The earlier beta 3 bundle remains available under its original release.
 
 ## Sources and verification
 
