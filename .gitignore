@@ -1,0 +1,4 @@
+*.jar
+*.zip
+__pycache__/
+dist/
