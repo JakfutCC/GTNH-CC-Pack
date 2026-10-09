@@ -1,4 +1,20 @@
-# RC2 verification — 2026-10-08
+# Backup fix verification — 2026-10-09
+
+Only CubicChunks and ServerUtilities changed; the other 81 jars are byte-identical to the previous RC2 bundle. Sources: [CC 43e4abe](https://github.com/JakfutCC/CubicChunks1710/commit/43e4abef776fb19791d5a1ea94ff11eec6c285c4) and [SU b152c8e](https://github.com/JakfutCC/ServerUtilities/commit/b152c8e1edfd4020792bf76946c67876340e070b).
+
+The converted UHV test reproduced a 37,162 ms server-thread backup pause, including 36,962 ms of snapshot copying. The final completed run took 225 ms on that thread, including 89 ms for metadata capture. Storage flushing and compression continued in the background for about a minute. Across 1,296 active backup ticks, median tick interval was 49.86 ms and maximum measured tick work was 239.13 ms. Initial saving is still synchronous: another final-jar preparation took 1,219 ms, and an earlier contended run took 5,838 ms. This is not a zero-latency guarantee.
+
+The final archive contained 5,126 files totaling 4,103,445,221 uncompressed bytes. Every entry passed CRC verification during extraction. The restored world loaded all 5,088 fixture cubes with zero missing cubes and zero multipart placeholders. Chests at Y -32, 64 and 512 restored their pre-backup diamond counts (11, 12 and 13), and their adjacent blocks matched. Changes made while backup was active stayed in memory and saved afterward (counts 50, 51 and 52); an attempted cube unload during save-off retained the dirty cubes. Cancelling during the CC flush left no archive, restored saving, and allowed a later save and successful backup.
+
+A separate fresh Zstandard/compact-storage world also backed up and loaded from its extracted archive, including 31 compact .cce tables and the same three marker heights. Its backup used the preceding SU build; the final difference only preserves cancellation exception classification. Restore used the final jars.
+
+The large-world check used a disposable copy of the converted UHV beta3 runtime with SU 2.4.14, GTNHLib 0.11.52 and the final CC integration. The old fixture's column layout was adapted privately to the current CC schema; the original world remained untouched. This verifies dedicated-server backup loading and selected persisted contents, not every machine or a new full RC2 client playthrough. Prior RC2 client coverage is retained below.
+
+Both mods passed assemble/check. Focused checks passed 11 private CC cases, six private SU cases and 28 existing SU backup cases; two Windows-specific cases skipped on Linux. Eight Opus 5.5 read-only review runs across two retained sessions resolved the correctness findings, including write ordering, failure recovery and cancellation safety. Private fixtures are not in the public patches or jars.
+
+Bash and Wine CMD cleanup tests each passed twice against the RC2 inventory. The bundle keeps all 83 jars; both changed source snapshots match their recorded commits. Binary/source ZIPs and checksums are verified again from the public release before the old release is deleted.
+
+## Prior RC2 verification — 2026-10-08
 
 This release contains all 83 selected jars: 81 patched mod jars, CubicChunks and RegionLib. Partial compatibility patches are included. Historical per-mod audit notes in `patches.json` retain their original scope; this release does not certify every gameplay feature.
 

@@ -476,13 +476,13 @@
       "mod_ids": [
         "cubicchunks"
       ],
-      "artifact": "corpus/build-artifacts/cubicchunks/cc-deployment/cubicchunks-0.1.25-alpha-pre-jakfutcc.jar",
-      "sha256": "057fefbc387db37280db166daaefe6b4d93eab52803dd781a9352ab763502a68",
+      "artifact": "corpus/build-artifacts/backup-fix/cubicchunks-0.1.25-alpha-pre-jakfutcc.jar",
+      "sha256": "b2d2b7be46ce6e23597d4235d5e2149e2dbddf1d177da953665d67f10571c63d",
       "patterns": [
         "cubicchunks-*.jar"
       ],
-      "source_repository": "https://github.com/GTNewHorizons/CubicChunks1710",
-      "source_commit": "d90f5b8a5dad5cbd6d51d3f1fe7e390e30d8cafa",
+      "source_repository": "https://github.com/JakfutCC/CubicChunks1710",
+      "source_commit": "43e4abef776fb19791d5a1ea94ff11eec6c285c4",
       "scopes": [
         "Enderman and collision probes",
         "Zstandard compression",
@@ -491,9 +491,10 @@
         "compact empty storage",
         "startup region compaction",
         "v0.1.25-alpha-pre",
-        "world height override"
+        "world height override",
+        "consistent asynchronous CubicChunks backups"
       ],
-      "filename": "cubicchunks-0.1.25-alpha-pre-jakfutcc-057fefbc.jar"
+      "filename": "cubicchunks-0.1.25-alpha-pre-jakfutcc-b2d2b7be.jar"
     },
     {
       "name": "Draconic Evolution",
@@ -1552,24 +1553,25 @@
       "mod_ids": [
         "serverutilities"
       ],
-      "artifact": "corpus/build-artifacts/rc2/ServerUtilities/ServerUtilities-2.4.14-jakfutcc.jar",
-      "sha256": "e828473053bfc8168fc75ba9fb598e2c3772e8860a1c76b013184afcdedf8062",
+      "artifact": "corpus/build-artifacts/backup-fix/ServerUtilities-2.4.14-jakfutcc.jar",
+      "sha256": "bc254b8a5ef7c5bfeabebfa38bcb3f0c1bc2885d3127bcbc0b46d29ad0903e90",
       "patterns": [
         "serverutilities-*.jar"
       ],
-      "source_repository": "https://github.com/GTNewHorizons/ServerUtilities",
-      "source_commit": "ab87794ed41212d3ea962dac0049937aeb45acdf",
+      "source_repository": "https://github.com/JakfutCC/ServerUtilities",
+      "source_commit": "b152c8e1edfd4020792bf76946c67876340e070b",
       "scopes": [
-        "ServerUtilities"
+        "ServerUtilities",
+        "consistent asynchronous CubicChunks backups"
       ],
       "compatibility": [
         {
           "scope": "ServerUtilities",
           "status": "Partial",
-          "notes": "2.4.9 seek_block fix b4b3b3f on fix-cubic-seek-block scans only resident loaded cubes at signed Y and honors the positive total result cap across columns/dimensions. Reviewed build and actual-command fixtures pass, including absent CC; no gameplay/deployment. Still synchronous: no-match work is loaded cubes x4096. RTP/claim-map height and snapshot policy, cube-aware ticket restoration, and backup flush/claim filtering remain deferred. CC region files bypass the claim filter, not the backup itself."
+          "notes": "2.4.9 seek_block fix b4b3b3f on fix-cubic-seek-block scans only resident loaded cubes at signed Y and honors the positive total result cap across columns/dimensions. Reviewed build and actual-command fixtures pass, including absent CC; prior command-fixture scope. Still synchronous: no-match work is loaded cubes x4096. RTP/claim-map height and snapshot policy, cube-aware ticket restoration, and claim filtering remain deferred. CC region files bypass the claim filter, not the backup itself. Backup snapshots now capture metadata on the server thread and flush/copy suspended CC storage on the worker. Paired CC honors save suspension and drains ordered writes. See VERIFICATION.md for the large-world backup/restore and cancellation checks."
         }
       ],
-      "filename": "ServerUtilities-2.4.14-jakfutcc-e8284730.jar",
+      "filename": "ServerUtilities-2.4.14-jakfutcc-bc254b8a.jar",
       "rc2_base": "2.4.14",
       "rc2_upstream_commit": "46e0b9ac879f31d36e5fb009748860785a5054a1"
     },

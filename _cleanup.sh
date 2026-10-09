@@ -44,7 +44,7 @@ clean 'codechickencore-*.jar' CodeChickenCore-1.4.22-jakfutcc-fe42b87c.jar
 clean 'computronics-*.jar' Computronics-1.9.10-GTNH-cc-note-playback-7bfda6e-jakfutcc-40209c49.jar
 clean 'littletiles-*.jar' littletiles-1.6.59-jakfutcc-0f707bc5.jar
 clean 'cropsnh-*.jar' cropsnh-2.0.134-jakfutcc-091018a1.jar
-clean 'cubicchunks-*.jar' cubicchunks-0.1.25-alpha-pre-jakfutcc-057fefbc.jar
+clean 'cubicchunks-*.jar' cubicchunks-0.1.25-alpha-pre-jakfutcc-b2d2b7be.jar
 clean 'draconic-evolution-*.jar' Draconic-Evolution-1.5.33-cubic-placed-cache-3fd3f6f-jakfutcc-d77db629.jar
 clean 'emt-*.jar' EMT-1.7.25-cc-energy-ball-06328b8-jakfutcc-0b6f82f0.jar
 clean 'enderio-*.jar' EnderIO-2.10.48-jakfutcc-7087a44c.jar
@@ -88,7 +88,7 @@ clean 'railcraft-*.jar' Railcraft-9.17.31-cc-tile-recipients-6332829-jakfutcc-c2
 clean 'randomthings-*.jar' RandomThings-2.7.11-jakfutcc-72ce77e8.jar
 clean 'regionlib-*.jar' regionlib-v0.1.0-GTNH-jakfutcc-7bcc8359.jar
 clean 'salisarcana-*.jar' salisarcana-v2.7.0-jakfutcc-72f4a2a5.jar
-clean 'serverutilities-*.jar' ServerUtilities-2.4.14-jakfutcc-e8284730.jar
+clean 'serverutilities-*.jar' ServerUtilities-2.4.14-jakfutcc-bc254b8a.jar
 clean 'sgcraft-*.jar' SGCraft-1.4.13-GTNH-cc-gate-render-46fa3a8-jakfutcc-aa3f016c.jar
 clean 'sleepingbag-*.jar' sleepingbag-0.3.1-negative-placement-c662239-jakfutcc-280fa941.jar
 clean 'specialmobs-*.jar' SpecialMobs-3.7.8-jakfutcc-84a3b39f.jar
