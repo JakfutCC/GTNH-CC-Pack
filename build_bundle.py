@@ -92,7 +92,7 @@ for %%F in (%~1) do (
 )
 exit /b 0
 '''
-    return {"cleanup.sh": bash.encode(), "cleanup.bat": batch.replace("\n", "\r\n").encode()}
+    return {"_cleanup.sh": bash.encode(), "_cleanup.bat": batch.replace("\n", "\r\n").encode()}
 
 
 def prepare(manifest, root):
@@ -127,7 +127,7 @@ def build(manifest_path, root, output):
 
 1. Close Minecraft.
 2. Copy everything inside this ZIP's mods folder into your instance's mods folder.
-3. Windows: run cleanup.bat. Linux: run bash cleanup.sh.
+3. Windows: run _cleanup.bat. Linux: run bash _cleanup.sh.
 4. Launch Minecraft.
 
 The cleanup script deletes other jar versions of the listed mods, including

@@ -9,7 +9,7 @@ instance's configs, quests or launcher files.
 
 1. Close Minecraft.
 2. Copy everything inside the ZIP's `mods` folder into your instance's `mods` folder.
-3. Run `cleanup.bat` on Windows or `bash cleanup.sh` on Linux.
+3. Run `_cleanup.bat` on Windows or `bash _cleanup.sh` on Linux.
 4. Launch Minecraft.
 
 The scripts delete other versions of the listed mods, including older patched
@@ -28,7 +28,7 @@ not include the world-converter UI. Existing partial compatibility work is
 included; the bundle does not make every mod fully cubic-compatible.
 
 See [beta 3 → RC2 changes](RC2-CHANGES.md) for the base mod versions and patch
-changes. The earlier beta 3 bundle remains available under its original release.
+changes.
 
 ## Sources and verification
 
